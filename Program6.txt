@@ -1,0 +1,10 @@
+Description: In order to find the maximum common substring I created a m+1*n+1 matrix.
+I filled the matrix in row by row where the value of the given cell was dependent on those around it.
+In order for this to work I made the first row and column full of zeros, hence the m+1 n+1 matrix.
+When the two characters were the same I filled the cell by incrementing the previous diagonal's value by one.
+When the two chacters were not the same I filled the cell by taking the maximum of the top and left cells. Filling 
+the cells this way allowed me to keep track of how long of a subsequence if any had been gathered so far.
+Because I filled the matrix out top to bottom, left to right, the bottom right most cell is where I began traversing from.
+I moved up and to the left, placing the character present in the substring in my temporary string. Since the substring in the temporary string
+was in reverse order. I traversed the string to store it to the subseq variable.
+Runtime: O(m*n) where m and n are the respective lengths of the input strings 
