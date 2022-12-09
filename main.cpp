@@ -1,9 +1,3 @@
-//
-//  main.cpp
-//  find maximum subsequence
-//
-//  Copyright Â© 2022 Tali Moreshet. All rights reserved.
-//
 #include <iostream>
 #include <string>
 
