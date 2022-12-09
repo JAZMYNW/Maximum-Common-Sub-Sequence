@@ -49,19 +49,3 @@ string findMaxSubSeq(string str1, string str2)
 
 }
 
-// main to test findMaxSubSeq
-// The actual test cases will provide their own command line arguments
-int main(int argc, char const* argv[])
-{
-	// example sequences A, B
-	string a = argv[1];
-
-	string b = argv[2];
-
-	string maxSubSeq = findMaxSubSeq(a, b);
-
-	cout << maxSubSeq << endl;
-    
-
-	return 0;
-}
