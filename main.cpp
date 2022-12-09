@@ -43,7 +43,7 @@ string findMaxSubSeq(string str1, string str2)
     for(int i = temp.length(); i>=0;i--){
         subseq+= temp[i];
     }
-
+ return subseq;
   
 
 }
