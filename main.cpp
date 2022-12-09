@@ -1,3 +1,9 @@
+//
+//  main.cpp
+//  find maximum subsequence
+//
+//  Copyright Â© 2022 Tali Moreshet. All rights reserved.
+//
 #include <iostream>
 #include <string>
 
@@ -5,10 +11,9 @@ using namespace std;
 
 // Given two sequences A and B, finds the longest sequence C such that
 // C is a subsequence (not necessarily contiguous) of both A and B
-string findMaxSubSeq(string str1, string str2)
-{
+string findMaxSubSeq(string str1, string str2){
     string subseq = "";
-    string temp = "";
+    
      int m = str1.length();
      int n = str2.length();
      int mat[m + 1][n + 1]; //creating a matrix
@@ -28,7 +33,7 @@ string findMaxSubSeq(string str1, string str2)
 //traversing the matrix to store characters in subsequence in a temp string
     while (m&&n) {
          if (str1[m - 1] == str2[n - 1]) {
-            temp+= str1[m-1];
+            subseq+= str1[m-1];
             m--;
             n--;
         }
@@ -40,11 +45,11 @@ string findMaxSubSeq(string str1, string str2)
         }
     } //because we traversed the matrix from top to bottom substring was stored in reverse order
  //Since stored in temp in reverse order, have to undo when storing to subsequence
-    for(int i = temp.length()-1; i>0;i--){
-        subseq+= temp[i];
-    }
- return subseq;
-  
+for (int i = 0; i < n / 2; i++){
+        swap(subseq[i], subseq[n - i - 1]);
+}
+
+	return subseq;
 
 }
 
@@ -52,7 +57,7 @@ string findMaxSubSeq(string str1, string str2)
 // The actual test cases will provide their own command line arguments
 int main(int argc, char const* argv[])
 {
-	// example sequences A, B
+	
 	string a = argv[1];
 
 	string b = argv[2];
