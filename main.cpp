@@ -40,7 +40,7 @@ string findMaxSubSeq(string str1, string str2)
         }
     } //because we traversed the matrix from top to bottom substring was stored in reverse order
  //Since stored in temp in reverse order, have to undo when storing to subsequence
-    for(int i = temp.length(); i>=0;i--){
+    for(int i = temp.length(); i>0;i--){
         subseq+= temp[i];
     }
  return subseq;
