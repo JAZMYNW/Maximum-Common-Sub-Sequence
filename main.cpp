@@ -8,6 +8,7 @@ using namespace std;
 // C is a subsequence (not necessarily contiguous) of both A and B
 string findMaxSubSeq(string str1, string str2){
     string subseq = "";
+    string temp = "";
     
      int m = str1.length();
      int n = str2.length();
@@ -28,7 +29,7 @@ string findMaxSubSeq(string str1, string str2){
 //traversing the matrix to store characters in subsequence in a temp string
     while (m&&n) {
          if (str1[m - 1] == str2[n - 1]) {
-            subseq+= str1[m-1];
+            temp+= str1[m-1];
             m--;
             n--;
         }
@@ -40,9 +41,10 @@ string findMaxSubSeq(string str1, string str2){
         }
     } //because we traversed the matrix from top to bottom substring was stored in reverse order
  //Since stored in temp in reverse order, have to undo when storing to subsequence
-for (int i = 0; i < n / 2; i++){
-        swap(subseq[i], subseq[n - i - 1]);
-    }   
+     n = temp.length();
+     while(n--)
+        subseq+=temp[n];
+
 	
 return subseq;
 
